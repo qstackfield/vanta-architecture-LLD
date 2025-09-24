@@ -96,3 +96,70 @@ The VANTA brain is deployed as a **three-node distributed system**. Each node ha
 - **Auditability:** append-only logs exist per node; together, they reconstruct every decision path.  
 
 ---
+
+## 📂 Filesystem & Layout (Hardened, Repeatable)
+
+The VANTA filesystem is designed for **clarity, repeatability, and audit-first operations**.  
+Every node follows a consistent `/opt/vanta/` structure, with node-specific subdirectories.
+
+---
+
+### Common (all nodes)
+- `/opt/vanta/build/` → shared utilities & assistants (from Alpha export)  
+  - `vanta_assistant.py` → interactive ops agent  
+  - `vanta_diagnostics.py` → system health + metrics  
+  - `vanta_thread.py` → thread tracker + orchestrator  
+  - `modules/` → under-review modules, isolated  
+  - `logs/` → assistant and tracker logs  
+  - `venv/` → optional virtualenv for shared tools  
+
+- `/opt/vanta/tools/` → node-local operational tools  
+- `/opt/vanta/memory/` → live JSON/JSONL state (queues, signals, overlays)  
+- `/opt/vanta/logs/` → operational logs (rotated, append-only)  
+
+---
+
+### Node A — Blackglass-Alpha
+- `/opt/vanta/alpha/`  
+  - `thread_tracker.json` → authoritative tracker for modules & reviews  
+  - `tracker_manager.py`, `tracker_viewer.py`, `tracker_status_summary.py` → management tools  
+- **NFS Export:** `/opt/vanta/build` → mounted by Markets & Executor  
+- **Aliases:** `vanta-assistant`, `vanta-thread`, `vanta-diagnostics`, `vanta-run`  
+- **Shortcuts:** `vt-add`, `vt-list`, `vt-mark`, `vt-open`, `vt-note`, `vt-fix`  
+
+---
+
+### Node B — Vanta-Markets
+- `/opt/vanta/markets/`  
+  - Harvesters: `reddit_stealth.py`, `twitter_*`, `sec_scraper.py`, `news_signals.py`, `crypto_signals.py`  
+  - Reflector: `market_reflector.py` → merges feeds into conviction vectors  
+  - Reranker: `signal_reranker.py` → applies fallback stability & persona bias  
+- `/opt/vanta/memory/`  
+  - `trade_signals.json` → core convictions  
+  - `*_signals.json` → reddit/news/crypto/etc. feeds  
+  - `system_belief.json`, `signal_leaderboard.json` → meta reasoning  
+- `/opt/vanta/logs/`  
+  - `reflector_meta.log`, `reddit.log`, `vanta-daily-runtime.log`  
+
+---
+
+### Node C — Vanta-Executor
+- `/opt/vanta/executor/`  
+  - `trade_executor.py` → main order router  
+- `/opt/vanta/memory/`  
+  - `autotrade_queue.json` → manager intents  
+  - `open_orders.json`, `trade_log.jsonl` → execution results  
+  - `vault.json` → alloc rules, persona overlays, tier bands  
+  - `vault_overlay.json` → feature flags, maintenance, flip mode  
+- Broker adapters (pluggable, no keys in repo): Alpaca, Tradier, IBKR, Coinbase, Bybit  
+
+---
+
+### Design Principles
+- **Alpha = authoritative control**  
+- **Markets = collection + reflection**  
+- **Executor = routing + broker adapters**  
+- Each node’s `/memory/` + `/logs/` is append-only and replayable  
+- Assistants and utilities flow one-way from Alpha → workers via `/opt/vanta/build`  
+
+---
