@@ -63,3 +63,36 @@ Not included in this document:
 - Platform-side subscription & mirroring (documented in **VANTA Platform LLD**)  
 
 ---
+
+## 🗺️ Topology (Authoritative)
+
+The VANTA brain is deployed as a **three-node distributed system**. Each node has a precise, non-overlapping role, ensuring separation of duties and fault tolerance.
+
+### Node A — **Blackglass-Alpha (Orchestrator / Brain)**
+- Acts as the **control plane** and authoritative configuration source.  
+- Hosts the **assistant, tracker, and diagnostics suite** used by operators.  
+- Maintains the **registry of vaults, overlays, and thread metadata**.  
+- Exports a shared `/opt/vanta/build` directory via NFS to Markets and Executor.  
+
+### Node B — **Vanta-Markets (Harvest & Reflection)**
+- Handles **high-throughput collection and reflection** of signals: Reddit, Twitter, SEC, news, crypto, options flow.  
+- Normalizes, deduplicates, and aligns raw feeds.  
+- Computes **reason vectors, conviction scores, and market overlays**.  
+- Produces authoritative artifacts like `trade_signals.json` and reflection logs.  
+
+### Node C — **Vanta-Executor (Execution Plane)**
+- Consumes **autotrade_queue.json** as the canonical intent stream.  
+- Routes orders through **risk fences, vault overlays, and persona constraints**.  
+- Interfaces with brokers/exchanges via pluggable adapters (Alpaca, Tradier, Coinbase, IBKR, Bybit).  
+- Maintains **open_orders.json** and append-only `trade_log.jsonl` for replay.  
+
+---
+
+### Cross-Node Principles
+- **Separation of Concerns:** no single node contains ingestion + reflection + execution.  
+- **Shared Utilities:** Alpha distributes assistants/tools via NFS, ensuring all nodes run consistent binaries.  
+- **Local State:** each node owns its `/opt/vanta/memory` and `/opt/vanta/logs` directories; nothing critical is centralized.  
+- **Governance Layer:** vault overlays and persona biases flow across nodes but remain deterministic.  
+- **Auditability:** append-only logs exist per node; together, they reconstruct every decision path.  
+
+---
