@@ -3,7 +3,7 @@
 </p>
 
 <h2 align="center"><strong>VANTA Architecture LLD - Three-Node Deployed Brain</strong></h2>
-<p align="center"><em>Authoritative low-level design for the orchestrated Alpha / Markets / Executor topology — redacted for external sharing.</em></p>
+<p align="center"><em>Authoritative low-level design for the orchestrated Alpha / Markets / Executor topology - redacted for external sharing.</em></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Architecture%20Spec-blue" />
