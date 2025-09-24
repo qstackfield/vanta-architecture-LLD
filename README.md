@@ -2,7 +2,7 @@
   <img src="https://i.postimg.cc/QdV16pcB/IMG-4837.jpg" alt="VANTA Banner" width="90%" />
 </p>
 
-<h2 align="center"><strong>VANTA Architecture LLD — Three-Node Deployed Brain</strong></h2>
+<h2 align="center"><strong>VANTA Architecture LLD - Three-Node Deployed Brain</strong></h2>
 <p align="center"><em>Authoritative low-level design for the orchestrated Alpha / Markets / Executor topology — redacted for external sharing.</em></p>
 
 <p align="center">
