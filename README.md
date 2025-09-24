@@ -163,3 +163,40 @@ Every node follows a consistent `/opt/vanta/` structure, with node-specific subd
 - Assistants and utilities flow one-way from Alpha → workers via `/opt/vanta/build`  
 
 ---
+
+## 💾 Storage & Sync (Simple, Proven, Restart-Safe)
+
+The VANTA stack uses a **minimal but robust storage design**.  
+Authoritative data lives locally per node, while shared utilities flow from Alpha.
+
+---
+
+### 🔗 Shared Mount
+- **Alpha exports:** `/opt/vanta/build`  
+- **Markets/Executor mount:** `/opt/vanta/build` (via NFS, versioned & read-only)  
+
+This ensures workers always run the same assistant and tracker bundle distributed from Alpha.
+
+---
+
+### 📂 Local State
+Each node persists its own **state & logs**:
+- `/opt/vanta/memory/` → JSON/JSONL state (signals, queues, overlays, orders).  
+- `/opt/vanta/logs/` → append-only logs, rotated daily.  
+- Node-local memory is **never overwritten** by NFS.  
+
+---
+
+### 🔑 Config Source of Truth
+- `thread_tracker.json` (Alpha) → authoritative record of modules, reviews, and statuses.  
+- `vault.json` + `vault_overlay.json` → manager intent + overrides (synced manually or scripted).  
+
+---
+
+### 🛡️ Design Principles
+- **Isolation:** each node owns its memory; corruption is contained.  
+- **Auditability:** append-only JSONL logs guarantee replay.  
+- **Determinism:** utilities and assistants stay identical across nodes (NFS export).  
+- **Resilience:** restart-safe; services resume state cleanly from `/memory/`.  
+
+---
