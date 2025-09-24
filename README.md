@@ -24,4 +24,42 @@
 > ⚠️ **Read First — Scope & Safety**
 >
 > This document describes **how VANTA is deployed and operated** (topology, storage, orchestration, controls) without exposing secrets, credentials, or proprietary algorithms.  
-> Paths and module names are **illustrative** and may be renamed in production deployments.
+> Paaths and module names are **illustrative** and may be renamed in production deployments.
+
+## 📌 Executive Summary
+
+The **VANTA Three-Node Brain** is a **production-grade, multi-node capital intelligence system** designed for resiliency, auditability, and scale.  
+It separates responsibilities into three dedicated roles:
+
+- **Alpha** → Orchestrator & Control Plane (truth source, trackers, operator tools)  
+- **Markets** → High-throughput ingestion & reflection (signals, conviction, reason vectors)  
+- **Executor** → Deterministic trade routing, vault enforcement, broker adapters  
+
+This separation ensures:
+- **Security** → No single node carries full state.  
+- **Replayability** → Any decision path can be reconstructed.  
+- **Scale** → Collector and executor capacity grows independently.  
+- **Governance** → Vault overlays, personas, and flip-modes constrain execution.  
+
+---
+
+## 🎯 Scope
+
+This LLD documents the **operational architecture** of VANTA across its three nodes:
+- Topology & roles  
+- Filesystem layout  
+- Data flows (harvest → reflect → queue → execute → audit)  
+- Personas & overlays (where applied)  
+- Observability, risk controls, and operator UX  
+
+---
+
+## 🚫 Non-Scope
+
+Not included in this document:
+- Proprietary model architectures (classifiers, forecasters, embeddings)  
+- Prompt templates or inference logic  
+- Live broker credentials, API keys, or tenant-specific configs  
+- Platform-side subscription & mirroring (documented in **VANTA Platform LLD**)  
+
+---
