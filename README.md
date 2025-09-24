@@ -68,19 +68,19 @@ Not included in this document:
 
 The VANTA brain is deployed as a **three-node distributed system**. Each node has a precise, non-overlapping role, ensuring separation of duties and fault tolerance.
 
-### Node A — **Blackglass-Alpha (Orchestrator / Brain)**
+### Node A - **Blackglass-Alpha (Orchestrator / Brain)**
 - Acts as the **control plane** and authoritative configuration source.  
 - Hosts the **assistant, tracker, and diagnostics suite** used by operators.  
 - Maintains the **registry of vaults, overlays, and thread metadata**.  
 - Exports a shared `/opt/vanta/build` directory via NFS to Markets and Executor.  
 
-### Node B — **Vanta-Markets (Harvest & Reflection)**
+### Node B - **Vanta-Markets (Harvest & Reflection)**
 - Handles **high-throughput collection and reflection** of signals: Reddit, Twitter, SEC, news, crypto, options flow.  
 - Normalizes, deduplicates, and aligns raw feeds.  
 - Computes **reason vectors, conviction scores, and market overlays**.  
 - Produces authoritative artifacts like `trade_signals.json` and reflection logs.  
 
-### Node C — **Vanta-Executor (Execution Plane)**
+### Node C - **Vanta-Executor (Execution Plane)**
 - Consumes **autotrade_queue.json** as the canonical intent stream.  
 - Routes orders through **risk fences, vault overlays, and persona constraints**.  
 - Interfaces with brokers/exchanges via pluggable adapters (Alpaca, Tradier, Coinbase, IBKR, Bybit).  
@@ -119,7 +119,7 @@ Every node follows a consistent `/opt/vanta/` structure, with node-specific subd
 
 ---
 
-### Node A — Blackglass-Alpha
+### Node A - Blackglass-Alpha
 - `/opt/vanta/alpha/`  
   - `thread_tracker.json` → authoritative tracker for modules & reviews  
   - `tracker_manager.py`, `tracker_viewer.py`, `tracker_status_summary.py` → management tools  
@@ -129,7 +129,7 @@ Every node follows a consistent `/opt/vanta/` structure, with node-specific subd
 
 ---
 
-### Node B — Vanta-Markets
+### Node B - Vanta-Markets
 - `/opt/vanta/markets/`  
   - Harvesters: `reddit_stealth.py`, `twitter_*`, `sec_scraper.py`, `news_signals.py`, `crypto_signals.py`  
   - Reflector: `market_reflector.py` → merges feeds into conviction vectors  
@@ -143,7 +143,7 @@ Every node follows a consistent `/opt/vanta/` structure, with node-specific subd
 
 ---
 
-### Node C — Vanta-Executor
+### Node C - Vanta-Executor
 - `/opt/vanta/executor/`  
   - `trade_executor.py` → main order router  
 - `/opt/vanta/memory/`  
@@ -790,10 +790,10 @@ AI Systems Architect | Autonomous Markets Builder
 
 ## 🔗 Explore the Ecosystem  
 
-🧠 **[VANTA OS – Autonomous Capital Intelligence Stack](https://github.com/qstackfield/vanta-capital-intelligence-os)**  
+🧠 **[VANTA OS - Autonomous Capital Intelligence Stack](https://github.com/qstackfield/vanta-capital-intelligence-os)**  
   Ingestion pipelines, reasoning engines, replayable DAGs, personas, and full technical architecture.  
 
-📡 **[VANTA Platform – Subscriptions & Vault Mirroring](https://github.com/qstackfield/vanta-platform)**  
+📡 **[VANTA Platform - Subscriptions & Vault Mirroring](https://github.com/qstackfield/vanta-platform)**  
   User-facing control plane for vault mirroring, subscriptions, and governed execution.  
 
 🌍 **[VANTA Investor Landing Page](https://qstackfield.github.io/vanta-capital-intelligence-os/)**  
