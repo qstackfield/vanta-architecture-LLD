@@ -834,23 +834,6 @@ AI Systems Architect | Autonomous Markets Builder
   </sub>
 </p>
 
----
-
-## 📬 Access
-
-This repo is the public-facing build journal - curated nights, structured notes.  
-There’s also a deeper layer of extended notes and raw fragments.  
-
-If you want in:  
-[![Request Access](https://img.shields.io/badge/Request-Access-blue?style=for-the-badge&logo=github)](../../issues/new?template=access-request.md)
-
-
-
-
-
-
-
-
 
 
 
