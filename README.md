@@ -28,7 +28,7 @@
 
 ---
 
-> ⚠️ **Read First — Scope & Safety**
+> ⚠️ **Read First - Scope & Safety**
 >
 > This document describes **how VANTA is deployed and operated** (topology, storage, orchestration, controls) without exposing secrets, credentials, or proprietary algorithms.  
 > Paaths and module names are **illustrative** and may be renamed in production deployments.
