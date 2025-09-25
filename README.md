@@ -12,12 +12,19 @@
   <img src="https://img.shields.io/badge/License-All%20Rights%20Reserved-red" />
 </p>
 
-<p align="center">
-  <a href="https://github.com/qstackfield/vanta-capital-intelligence-os"><b>VANTA OS (Core)</b></a> ·
-  <a href="https://github.com/qstackfield/vanta-platform"><b>VANTA Platform (Mirroring)</b></a> ·
-  <a href="https://qstackfield.github.io/vanta-capital-intelligence-os/"><b>Investor Overview</b></a> ·
-  <a href="https://github.com/qstackfield/vanta-capital-intelligence-os/discussions"><b>Discussions</b></a>
-</p>
+---
+
+👋 **New to VANTA?**
+
+🔎 Looking for the **core intelligence engine**? → Visit the [VANTA OS Repository](https://github.com/qstackfield/vanta-capital-intelligence-os).  
+
+📡 Curious about **subscriptions & vault mirroring**? → Check out the [VANTA Platform Repository](https://github.com/qstackfield/vanta-platform).  
+
+🌍 Need the **high-level investor overview**? → Start with the [Investor Landing Page](https://qstackfield.github.io/vanta-capital-intelligence-os/).  
+
+💬 Have questions, roadmap ideas, or feedback? → Join the [VANTA Discussions](https://github.com/qstackfield/vanta-capital-intelligence-os/discussions).  
+
+---
 
 ---
 
