@@ -821,21 +821,6 @@ AI Systems Architect | Autonomous Markets Builder
 - [LinkedIn](https://www.linkedin.com/in/qstackfield)  
 - [GitHub](https://github.com/qstackfield)  
 
----
-
-## 🔗 Explore the Ecosystem  
-
-🧠 **[VANTA OS - Autonomous Capital Intelligence Stack](https://github.com/qstackfield/vanta-capital-intelligence-os)**  
-  Ingestion pipelines, reasoning engines, replayable DAGs, personas, and full technical architecture.  
-
-📡 **[VANTA Platform - Subscriptions & Vault Mirroring](https://github.com/qstackfield/vanta-platform)**  
-  User-facing control plane for vault mirroring, subscriptions, and governed execution.  
-
-🌍 **[VANTA Investor Landing Page](https://qstackfield.github.io/vanta-capital-intelligence-os/)**  
-  High-level overview of the VANTA vision, value proposition, and funding opportunities.  
-
-💬 **[VANTA Discussions](https://github.com/qstackfield/vanta-capital-intelligence-os/discussions)**  
-  Open Q&A, roadmap ideas, and community collaboration — fully transparent and public.  
 
 
 
