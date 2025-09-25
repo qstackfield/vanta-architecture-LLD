@@ -821,6 +821,28 @@ AI Systems Architect | Autonomous Markets Builder
 - [LinkedIn](https://www.linkedin.com/in/qstackfield)  
 - [GitHub](https://github.com/qstackfield)  
 
+---
+
+## 🔗 Related Repositories  
+<p align="center">
+  <sub>
+    🧠 <a href="https://github.com/qstackfield/vanta-capital-intelligence-os"><b>VANTA OS</b></a> ·
+    📡 <a href="https://github.com/qstackfield/vanta-platform"><b>VANTA Platform</b></a> ·
+    🗂️ <a href="https://github.com/qstackfield/vanta-architecture-LLD"><b>Architecture LLD</b></a> ·
+    🌍 <a href="https://qstackfield.github.io/vanta-capital-intelligence-os/"><b>Investor Overview</b></a> ·
+    💬 <a href="https://github.com/qstackfield/vanta-capital-intelligence-os/discussions"><b>Discussions</b></a>
+  </sub>
+</p>
+
+---
+
+## 📬 Access
+
+This repo is the public-facing build journal - curated nights, structured notes.  
+There’s also a deeper layer of extended notes and raw fragments.  
+
+If you want in:  
+[![Request Access](https://img.shields.io/badge/Request-Access-blue?style=for-the-badge&logo=github)](../../issues/new?template=access-request.md)
 
 
 
