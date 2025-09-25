@@ -26,6 +26,34 @@
 > This document describes **how VANTA is deployed and operated** (topology, storage, orchestration, controls) without exposing secrets, credentials, or proprietary algorithms.  
 > Paaths and module names are **illustrative** and may be renamed in production deployments.
 
+---
+
+## 📑 Table of Contents
+
+- [📌 Executive Summary](#-executive-summary)  
+- [🎯 Scope](#-scope)  
+- [🚫 Non-Scope](#-non-scope)  
+- [🗺️ Topology (Authoritative)](#️-topology-authoritative)  
+- [📂 Filesystem & Layout](#-filesystem--layout-hardened-repeatable)  
+- [💾 Storage & Sync](#-storage--sync-simple-proven-restart-safe)  
+- [⏱️ Runtime & Scheduling](#️-runtime--scheduling)  
+- [🔒 Networking & Security](#-networking--security)  
+- [🔄 Data Flow (Wire-Level Narrative)](#-data-flow-wire-level-narrative)  
+- [🎭 Personas & Flip-Mode](#-personas--flip-mode-intelligence-overlay)  
+- [🏦 Vaults, Multi-Vault, and Mirroring](#-vaults-multi-vault-and-mirroring-customer-plane)  
+- [📊 Observability & Ops](#-observability--ops)  
+- [🔌 API & Model Usage](#-api--model-usage)  
+- [🚀 Deployment & Upgrades](#-deployment--upgrades)  
+- [🛡️ Risk Controls](#-risk-controls-live-money-discipline)  
+- [🧰 Command Cheats](#-command-cheats-operator-shortcuts)  
+- [📐 Diagram Hints](#-diagram-hints-architecture-visualization)  
+- [🚀 Why This Is From the Future](#-why-this-is-from-the-future)  
+- [🌟 Funding & Support](#-funding--support)  
+- [📫 Contact & Collaboration](#-contact--collaboration)  
+- [🔗 Explore the Ecosystem](#-explore-the-ecosystem)  
+
+---
+
 ## 📌 Executive Summary
 
 The **VANTA Three-Node Brain** is a **production-grade, multi-node capital intelligence system** designed for resiliency, auditability, and scale.  
