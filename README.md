@@ -837,16 +837,6 @@ AI Systems Architect | Autonomous Markets Builder
 💬 **[VANTA Discussions](https://github.com/qstackfield/vanta-capital-intelligence-os/discussions)**  
   Open Q&A, roadmap ideas, and community collaboration — fully transparent and public.  
 
----
-
-## 📬 Access
-
-This repo is the public-facing build journal - curated nights, structured notes.  
-There’s also a deeper layer of extended notes and raw fragments.  
-
-If you want in:  
-[![Request Access](https://img.shields.io/badge/Request-Access-blue?style=for-the-badge&logo=github)](../../issues/new?template=access-request.md)
-
 
 
 
